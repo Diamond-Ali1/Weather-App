@@ -31,15 +31,17 @@ const Dom = {
 let currDate = new Date();
 //gets users current location 
 let locationUrl = `https://api.ipgeolocation.io/ipgeo?apiKey=536e61190da2441882176a5cd1d55d4c`;
+let searched = false;
 //fetches the data in json format 
 function getData(url, fn) {
   fetch(url)
   .then(response => response.json())
-  .then(data => fn(data));
+  .then(data => fn(data))
+  .catch(err => console.log(err));
 }
 //renders data on page
 function process(data) {
-  if (data.cod == 404) {
+  if (data.cod == 404 && searched) {
     showErr(data);
     return;
   }
@@ -95,6 +97,7 @@ function getUserInputs() {
 //searches for weather data for city entered by user
 function findCity() {
   if (searchBar.value. length > 1) {
+    searched = true;
     getUserInputs();
   } else {
     Dom.err.style.display = 'block';
@@ -110,6 +113,7 @@ function showErr(error) {
 //ends searchbar validation when user enters a city
 Dom.searchBar.addEventListener('keyup', () => {
   if (Dom.searchBar.value.length > 1) {
+    searched = false;
     getUserInputs();
     Dom.err.style.display = 'none';
     Dom.searchBar.classList.remove('error');
