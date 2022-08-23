@@ -12,7 +12,7 @@ const Dom = {
   min:document.querySelector('.min'),
   max:document.querySelector('.max'),
   feels:document.querySelector('.feels'),
-  flag:document.querySelector('.flag),
+  flag:document.querySelector('.flag'),
   wind:document.querySelector('.wind'),
   humidity:document.querySelector('.humidity'),
   visibility:document.querySelector('.visibility'),
