@@ -12,6 +12,7 @@ const Dom = {
   min:document.querySelector('.min'),
   max:document.querySelector('.max'),
   feels:document.querySelector('.feels'),
+  flag:document.querySelector('.flag),
   wind:document.querySelector('.wind'),
   humidity:document.querySelector('.humidity'),
   visibility:document.querySelector('.visibility'),
@@ -52,12 +53,14 @@ function process(data) {
   let {description, main, icon} = data.weather[0];
   let {country} = data.sys;
   let iconUrl = `http://openweathermap.org/img/wn/${icon}.png`;
+  let flagUrl = `https://countryflagsapi.com/svg/${country}`;
   Dom.body.style.background = `url(Images/${main}.jpg)`;
   Dom.body.style.backgroundSize = '100%';
   Dom.cityName.textContent = `${name}, ${country}`;
   Dom.temp.textContent = `${temp}°`
   Dom.condition.textContent = description;
   Dom.icon.setAttribute('src', iconUrl);
+  Dom.flag.setAttribute('src', flagUrl);
   Dom.min.textContent = `${temp_min}°`;
   Dom.max.textContent = `${temp_max}°`;
   Dom.feels.textContent = `${feels_like}°`;
