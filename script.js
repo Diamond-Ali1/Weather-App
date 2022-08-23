@@ -50,10 +50,11 @@ function process(data) {
   let {humidity, pressure, temp, temp_max, temp_min, feels_like} = data.main;
   let {speed} = data.wind;
   let {description, main, icon} = data.weather[0];
+  let {country} = data.sys;
   let iconUrl = `http://openweathermap.org/img/wn/${icon}.png`;
   Dom.body.style.background = `url(Images/${main}.jpg)`;
   Dom.body.style.backgroundSize = '100%';
-  Dom.cityName.textContent = name;
+  Dom.cityName.textContent = `${name}, ${country}`;
   Dom.temp.textContent = `${temp}°`
   Dom.condition.textContent = description;
   Dom.icon.setAttribute('src', iconUrl);
