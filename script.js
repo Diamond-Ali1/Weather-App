@@ -22,7 +22,10 @@ const Dom = {
   day:document.querySelector('.day'), 
   date:document.querySelector('.dayNum'),
   month:document.querySelector('.month'), 
-  year:document.querySelector('.year')
+  year:document.querySelector('.year'), 
+  header:document.querySelector('header'), 
+  main:document.querySelector('main'), 
+  footer:document.querySelector('footer')
 }
 //gets current date
 let currDate = new Date();
@@ -112,6 +115,7 @@ Dom.searchIcon.addEventListener('click', displaySearchBar);
 Dom.closeIcon.addEventListener('click', hideSearchBar);
 Dom.search.addEventListener('click', findCity) 
 addEventListener('load', () => {
+  Dom.footer.style.height = `${innerHeight - (Dom.main.clientHeight + Dom.header.clientHeight)}px`
   getData(locationUrl, locate);
 })
 /*
