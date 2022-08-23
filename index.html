@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="Author" content="Diamond Ali">
+  <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Roboto+Slab&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/cdf46354d6.js" crossorigin="anonymous"></script>
+  <title>Weather App</title> 
+</head>
+<body>
+  <div>
+    <div>
+      <header>
+        <div class="search">
+          <div class="searchDisplay">
+            <input type="text" placeholder="Search city" id="searchBar">
+            <div class="find"><i class="fa-solid fa-magnifying-glass"></i></div>
+          </div>
+        </div>
+        <small class="err">city not found</small>
+         <div class="closeIcon"><i class="fa-solid fa-xmark"></i></div>
+        <h3 class=" cityName" >Loading...</h3>
+        <div class="searchIcon "><i class="fa-solid fa-magnifying-glass"></i></div>
+      </header>
+      <main>
+        <div>
+          <div class="temp"></div>
+          <div>
+            <p class=" condition" >Loading...</p>
+            <img class="icon">
+          </div>
+          <div class="minAndMax">
+            <div><i class="fa-solid fa-up-long"></i><span class=" min" ></span></div>
+            <div><i class="fa-solid fa-down-long"></i><span class=" max" ></span></div>
+            <div>Feels <span class=" feels" ></span></div>
+          </div>
+          <div class="date">
+            <span class="day"></span> <span class="dayNum"></span> <span class="month"></span> <span class="year"></span>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div>
+          <div><i class="fa-solid fa-fan"></i></div>
+          <div class=" wind" ></div>
+          <p>Wind Speed</p>
+        </div>
+        <div>
+          <div><i class="fa-solid fa-droplet"></i></div>
+          <div class=" humidity" ></div>
+          <p>Humidity</p>
+        </div>
+        <div>
+          <div><i class="fa-solid fa-eye"></i></div>
+          <div class=" visibility" ></div>
+          <p>Visibility</p>
+        </div>
+        <div>
+          <div><i class="fa-solid fa-weight-scale"></i></div>
+          <div class=" pressure" ></div>
+          <p>Pressure</p>
+        </div>
+        <div>
+          <div><i class="fa-solid fa-location-crosshairs"></i></div>
+          <div class=" longitude" ></div>
+          <div>Longitude</div>
+        </div>
+        <div>
+          <div><i class="fa-solid fa-location-pin"></i></div>
+          <div class=" latitude" ></div>
+          <div>Latitude</div>
+        </div>
+      </footer>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
