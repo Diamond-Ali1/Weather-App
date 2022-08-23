@@ -87,12 +87,15 @@ function hideSearchBar() {
   Dom.searchDisplay.style.display = 'none';
   Dom.closeIcon.style.display = 'none';
 }
+function getUserInputs() {
+  city = Dom.searchBar.value.trim();
+  WeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=e2a447e89fd85656259b7ee81f1fa5dd`;
+  getData(WeatherUrl, process);
+}
 //searches for weather data for city entered by user
 function findCity() {
   if (searchBar.value. length > 1) {
-    city = Dom.searchBar.value.trim();
-    WeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=ad70d2e2623f3a95153e15a1d6d6dd4c`;
-    getData(WeatherUrl, process);
+    getUserInputs();
   } else {
     Dom.err.style.display = 'block';
     Dom.err.textContent = 'Enter a city' ;
@@ -105,8 +108,9 @@ function showErr(error) {
   Dom.err.textContent = error.message;
 }
 //ends searchbar validation when user enters a city
-Dom.searchBar.addEventListener('keydown', () => {
+Dom.searchBar.addEventListener('keyup', () => {
   if (Dom.searchBar.value.length > 1) {
+    getUserInputs();
     Dom.err.style.display = 'none';
     Dom.searchBar.classList.remove('error');
   }
