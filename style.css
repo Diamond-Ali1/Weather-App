@@ -81,6 +81,11 @@ header small{
   margin-left:4%;
   font-family: 'Aboreto', cursive;
 }
+.flag{
+  width:30px;
+  height:24px;
+  z-index:6;
+}
 .searchIcon{
   margin-left:25%;
   margin-top:3px;
