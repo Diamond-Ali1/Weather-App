@@ -88,7 +88,7 @@ function hideSearchBar() {
 function findCity() {
   if (searchBar.value. length > 1) {
     city = Dom.searchBar.value.trim();
-    WeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=e2a447e89fd85656259b7ee81f1fa5dd`;
+    WeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=ad70d2e2623f3a95153e15a1d6d6dd4c`;
     getData(WeatherUrl, process);
   } else {
     Dom.err.style.display = 'block';
