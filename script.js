@@ -132,7 +132,7 @@ Dom.searchBar.addEventListener('focus', () => {
     if (timer > 2 && timer % 3 == 0) {
       getUserInputs(); 
     }
-  },1000)
+   },1000)
 })
 Dom.searchBar.addEventListener('blur', () => clearInterval(incrementTimer))
 Dom.searchIcon.addEventListener('click', displaySearchBar);
