@@ -56,7 +56,7 @@ function process(data) {
   let flagUrl = `https://countryflagsapi.com/svg/${country}`;
   Dom.body.style.background = `url(Images/${main}.jpg)`;
   Dom.body.style.backgroundSize = '100%';
-  Dom.cityName.textContent = `${name}, ${country}`;
+  Dom.cityName.textContent = `${name}, ${country} `;
   Dom.temp.textContent = `${temp}°`
   Dom.condition.textContent = description;
   Dom.icon.setAttribute('src', iconUrl);
