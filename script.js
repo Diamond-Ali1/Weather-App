@@ -33,6 +33,8 @@ let currDate = new Date();
 //gets users current location 
 let locationUrl = `https://api.ipgeolocation.io/ipgeo?apiKey=536e61190da2441882176a5cd1d55d4c`;
 let searched = false;
+let timer = 1;
+let incrementTimer;
 //fetches the data in json format 
 function getData(url, fn) {
   fetch(url)
@@ -116,13 +118,23 @@ function showErr(error) {
 }
 //ends searchbar validation when user enters a city
 Dom.searchBar.addEventListener('keyup', () => {
+  timer = 1;
   if (Dom.searchBar.value.length > 1) {
     searched = false;
-    getUserInputs();
     Dom.err.style.display = 'none';
     Dom.searchBar.classList.remove('error');
   }
 })
+//enables auto search after 2 seconds of inactivity
+Dom.searchBar.addEventListener('focus', () => {
+   incrementTimer = setInterval(() => {
+    timer++;
+    if (timer > 2 && timer % 3 == 0) {
+      getUserInputs(); 
+    }
+  },1000)
+})
+Dom.searchBar.addEventListener('blur', () => clearInterval(incrementTimer))
 Dom.searchIcon.addEventListener('click', displaySearchBar);
 Dom.closeIcon.addEventListener('click', hideSearchBar);
 Dom.search.addEventListener('click', findCity) 
