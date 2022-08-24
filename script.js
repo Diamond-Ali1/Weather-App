@@ -138,6 +138,12 @@ Dom.searchBar.addEventListener('blur', () => clearInterval(incrementTimer))
 Dom.searchIcon.addEventListener('click', displaySearchBar);
 Dom.closeIcon.addEventListener('click', hideSearchBar);
 Dom.search.addEventListener('click', findCity) 
+addEventListener('keyup', (e) => {
+  if (e.key == 'Enter') {
+    searched = true;
+    getUserInputs();
+  }
+})
 addEventListener('load', () => {
   Dom.footer.style.height = `${innerHeight - (Dom.main.clientHeight + Dom.header.clientHeight)}px`
   getData(locationUrl, locate);
