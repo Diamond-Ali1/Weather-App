@@ -85,6 +85,7 @@ header small{
   width:30px;
   height:24px;
   z-index:6;
+  margin-left:8px;
 }
 .searchIcon{
   margin-left:25%;
